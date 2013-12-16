@@ -9,4 +9,6 @@ Includes
 
 * Bifurcation plotter - bi.py
 * Lorenz Attractor - lorenz.py
-* Report - report.tex
+* Rossler Attractor - rossler.py
+* Report - report.te
+x
