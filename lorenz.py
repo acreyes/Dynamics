@@ -38,27 +38,36 @@ def rk4(x, y, z, dt, sig, rho, beta):
     yn = y + (ky1 + 2*ky2 + 2*ky3 + ky4)/6
     zn = z + (kz1 + 2*kz2 + 2*kz3 + kz4)/6
     return(xn, yn, zn)
-def Lorenz(x, y, z, rho, sig, beta, ax):
+def Lorenz(x, y, z, rho, sig, beta, ax, ax2):
     T, dt, t = 80, 0.02, 0
-    xx, yy, zz = [], [], []
+    xx, yy, zz, tt = [], [], [], []
     xx.append(x)
     yy.append(y)
     zz.append(z)
+    tt.append(t)
     while(t<T):
         x, y, z = rk4(x, y, z, dt, sig, rho, beta)
         xx.append(x)
         yy.append(y)
         zz.append(z)    
+        tt.append(t)
         t += dt
     lab = r'$\rho = $ '+str(rho)
     ax.plot(xx, yy, zz, label=lab)
+    ax2.plot(tt, zz, label=lab)
 #########Plot Data#########
-fig = plt.figure()
+fig = plt.figure(1)
 ax = fig.gca(projection='3d')
+fig2 = plt.figure(2)
+ax2 = fig2.gca()
 rho = 28
-for i in range(4):
-    Lorenz(2, 5,20, rho, 10, 8/3, ax)
-    rho -= 4
-plt.title('Lorenz Attractor')
-plt.legend()
+for i in range(2):
+    Lorenz(2, 5,0, rho, 10, 8/3, ax, ax2)
+    rho -= 0.0003
+ax.set_title('Lorenz Attractor')
+ax2.set_title('Lorenz Attractor')
+ax2.set_ylabel('Z')
+ax2.set_xlabel('time')
+ax.legend()
+ax2.legend()
 plt.show()    
