@@ -10,5 +10,4 @@ Includes
 * Bifurcation plotter - bi.py
 * Lorenz Attractor - lorenz.py
 * Rossler Attractor - rossler.py
-* Report - report.te
-x
+* Report - AdamReyes_Feigen.tex

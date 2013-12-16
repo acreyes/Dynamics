@@ -1,0 +1,126 @@
+\documentclass[paper=a4, fontsize=11pt, abstract=on]{scrartcl} % A4 paper and 11pt font size
+\usepackage[left=2.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry} 
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage{graphicx}
+\usepackage{sectsty}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage[english]{babel}
+\usepackage{bibentry}
+\usepackage {natbib}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{listings}
+  \usepackage{courier}
+\usepackage{graphics}
+ \usepackage{color} 
+ \lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+    		frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+         %[Visual]Basic
+         %Pascal
+         C
+         %Python
+         %C++
+         %XML
+         %HTML
+         %Java
+ }
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+
+
+\numberwithin{equation}{section}
+\numberwithin{figure}{section} 
+\numberwithin{table}{section}
+%\setlength\parindent{0pt}
+
+\fancyhead[R]{\thepage} 
+\fancyhead[L]{Reyes, Adam} 
+\fancyhead[C]{The Feigenbaum Number} 
+\fancyfoot[L]{} 
+\fancyfoot[C]{} 
+\fancyfoot[R]{} 
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
+
+\title{	
+The Feigenbaum Number
+\horrule{0.5pt}
+\normalfont \normalsize 
+\textsc{Dynamics Fall 2013}
+}
+
+\author{Adam Reyes} % Your name
+
+\date{\normalsize\today} % Today's date or a custom date
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+\section{The Logistic Map}
+\label{sec:logmap}
+
+\section{Period-Doubling}
+\label{sec:pdub}
+
+\section{The Feigenbaum Number $\delta=4.99...$}
+\label{sec:feig}
+
+\section{Strange Attractors}
+\label{sec:strng}
+
+here \cite{lorenz}
+
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\section{Source Code}
+\label{sec:code}
+
+All programs are available online at
+\url{https://github.com/acreyes/Dynamics}
+
+\lstinputlisting[label=bi,caption=Program to make bifurcation
+plots]{bi.py}
+
+\lstinputlisting[label=bi,caption=Program to plot Rossler Attractor]{rossler.py}
+
+\lstinputlisting[label=lorenz,caption=Program to plot Lorenz Attractor]{lorenz.py}
+
+\end{document}
